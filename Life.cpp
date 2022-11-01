@@ -18,6 +18,7 @@ void print_array(int arr[y][x], char simv[], int x, int y); /*displaying an arra
 
 int main()
 {
+	srand(time(NULL));
 	char simv[2]{ 176,219 }; /*the symbols with which the cells are displayed on the screen*/
 	int arr[y][x];
 	int arr2[y][x];
