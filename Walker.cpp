@@ -5,7 +5,7 @@ using namespace std;
 
 
 int const x = 40, y = 20;     /*field size*/
-char simv[3]{176,178,219};    /*symbols to indicate*/
+char simv[4]{176,178,219,177};    /*symbols to indicate*/
 int x_plcord = x / 2, y_plcord = y / 2 - 1;  /*the initial position of the player*/
 int number_target = 10;  /*number of target*/
 void scren(char mod);    /*updating the screen*/
@@ -63,8 +63,8 @@ void print_array()
 
 void scren(char mod)
 {
-	arr[y_plcord][x_plcord] = 0;       /*cleaning up the old place*/
-	arr[y_plcord][x_plcord + 1] = 0;
+	arr[y_plcord][x_plcord] = 3;       /*cleaning up the old place*/
+	arr[y_plcord][x_plcord + 1] = 3;
 	switch (mod)                       /*reaction to button pressing*/
 	{
 	case '8':
