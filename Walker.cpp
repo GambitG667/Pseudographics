@@ -33,10 +33,7 @@ int main()
 			arr[rand1][rand2 + 1] = 1;
 			++i;
 		}
-		
-
 	}
-
 	arr[y_plcord][x_plcord] = 2;    /*creating a player*/
 	arr[y_plcord][x_plcord+1] = 2;
 
