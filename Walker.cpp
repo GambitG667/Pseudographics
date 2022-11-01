@@ -50,10 +50,6 @@ int main()
 		system("cls");
 		print_array();
 	}
-
-
-
-
 	return  0;
 }
 
@@ -72,7 +68,6 @@ void scren(char mod)
 {
 	arr[y_plcord][x_plcord] = 0;       /*cleaning up the old place*/
 	arr[y_plcord][x_plcord + 1] = 0;
-
 	switch (mod)                       /*reaction to button pressing*/
 	{
 	case '8':
@@ -95,13 +90,10 @@ void scren(char mod)
 	default:
 		break;
 	}
-
 	if (arr[y_plcord][x_plcord] == 1)    /*checking for a collision with the target*/
 		number_target -= 1;
-
+	
 	arr[y_plcord%y][x_plcord%x] = 2;         /*additional allocation of the remainder of the division because the compiler was swearing*/
 	arr[y_plcord%y][(x_plcord + 1)%x] = 2;
-
-
 }
 
