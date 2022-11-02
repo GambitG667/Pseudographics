@@ -12,7 +12,7 @@ void vijner(string &txt, string key, int mode);
 
 int main()
 {
-	SetConsoleCP(1251);       /* исключительно винды прикол усьтановление кодировки ввода с консоли на linux должно и без этого работать*/
+	SetConsoleCP(1251);       /* исключительно винды прикол установление кодировки ввода с консоли на linux должно и без этого работать*/
 	setlocale(LC_ALL, "ru");
 	string txt , key;
 	int mode;
