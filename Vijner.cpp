@@ -4,13 +4,15 @@
 #include <conio.h>
 #include <windows.h>
 
+/*Я наконец понял как сюда добавить кирилицу))*/
+
 using namespace std;
 
 void vijner(string &txt, string key, int mode);
 
 int main()
 {
-	SetConsoleCP(1251);
+	SetConsoleCP(1251);       /* исключительно винды прикол усьтановление кодировки ввода с консоли на linux должно и без этого работать*/
 	setlocale(LC_ALL, "ru");
 	string txt , key;
 	int mode;
@@ -18,7 +20,7 @@ int main()
 	char x = '1';
 	while (x == '1')
 	{
-		cout << "Введите текст КАПСОМ: ";
+		cout << "Введите текст КАПСОМ: ";                            /*"cin >> ws" - чтоб переносы в потоке не сохранялись и ввод работал нормально*/
 		getline(cin >> ws, txt);
 		cout << "Введите ключ КАПСОМ: ";
 		getline(cin >> ws, key);
@@ -37,12 +39,20 @@ int main()
 
 void vijner(string &txt, string key, int mode)
 {
-	string A = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ ";
+	string A = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ ";   /* Алфавит. Можно добавить еще какие угодно символы, но у шифратора и дешифратора должен быть одинаковым*/
 	string longkey;
-	while (longkey.length() < txt.length())
+	while (longkey.length() < txt.length())  /*удлинение ключа по алгоритму шифрования до длины теста*/
 		longkey.append(key);
 	for (int i = 0; i < txt.length(); ++i)
 	{
-		txt[i] = A[(A.length() + A.find(txt[i]) + mode * A.find(longkey[i])) % A.length()];
+		txt[i] = A[(A.length() + A.find(txt[i]) + mode * A.find(longkey[i])) % A.length()]; 
 	}
-}
+}                                                                                                  /*Капец сложная формула которую я 
+												вывожу четвертый раз и каждый раз забываю как я это сделал
+												по идее тут тоже самое что и с мотоциклистом
+												индекс буквы - его место в алфавите
+												индекс зашифрованной буквы это индекс первоначальной буквы
+												смещенный вправо на величину индекса соответствующей буквы ключа
+												если индекс выходит за пределы алфавиты,
+												то происходит закольцовывание
+												дешифровка - смещение наоборот влево*/
