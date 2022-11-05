@@ -20,9 +20,7 @@ int main()
 	srand(time(NULL));
 
 	Cels arr[y][x];
-
-	char mod = '1';
-
+	
 	while (true)
 	{
 		Sleep(t);
