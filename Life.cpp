@@ -32,23 +32,23 @@ int main()
 
 		}
 
-	print_array(arr, simv, y, x);  /*output of the first frame*/
+	print_array(arr, simv, x, y);  /*output of the first frame*/
 
 	while (true)                    /*endless frame refresh cycle*/
 	{
-		scren(arr, arr2, y, x, n); /*the second array is filled (0,1) based on the first array*/
+		scren(arr, arr2, x, y, n); /*the second array is filled (0,1) based on the first array*/
 
 		Sleep(t);         /*waiting for the next frame*/
 		system("cls");    /*clearing the console (screen)*/
 
-		print_array(arr2, simv, y, x); /*output of the second array*/
+		print_array(arr2, simv, x, y); /*output of the second array*/
 
-		scren(arr2, arr, y, x, n); /*the first array is filled (0,1) based on the second array*/
+		scren(arr2, arr, x, y, n); /*the first array is filled (0,1) based on the second array*/
 
 		Sleep(t);
 		system("cls");
 
-		print_array(arr, simv, y, x); /*output of the first array again*/
+		print_array(arr, simv, x, y); /*output of the first array again*/
 	}
 
 
