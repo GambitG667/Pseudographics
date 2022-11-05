@@ -58,8 +58,8 @@ int main()
 
 void scren(int arr[y][x], int arr2[y][x], int x, int y, int n)
 {
-	for (int i = 0; i < x; ++i)
-		for (int j = 0; j < y - 1; j += 2)
+	for (int i = 0; i < y; ++i)
+		for (int j = 0; j < x - 1; j += 2)
 		{
 			int res = 0;  /*number of cell neighbors*/
 			for (int i1 = i - 1; i1 <= i + 1; ++i1)
@@ -92,9 +92,9 @@ void scren(int arr[y][x], int arr2[y][x], int x, int y, int n)
 
 void print_array(int arr[y][x], char simv[], int x, int y)
 {
-	for (int i = 0; i < x; ++i)
+	for (int i = 0; i < y; ++i)
 	{
-		for (int j = 0; j < y; ++j)
+		for (int j = 0; j < x; ++j)
 			cout << simv[arr[i][j]]; /*the int value of the array element is replaced by the character*/
 		cout << '\n';
 	}
