@@ -1,3 +1,5 @@
+#include <iostream>
+
 struct ScreenArray
 {
 	int* screenArray;
